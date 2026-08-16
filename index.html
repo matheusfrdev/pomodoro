@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pomodoro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="header">
+            <div class="brand">
+                <div class="brand-icon">◷</div>
+
+                <div>
+                    <h1>Pomodoro</h1>
+                    <span>Foco sem distrações.</span>
+                </div>
+            </div>
+
+            <button class="settings-btn" id="settingsBtn" aria-label="Configurações">
+                ⚙
+            </button>
+        </header>
+
+
+        <section class="timer-card">
+
+            <div class="mode-tabs">
+                <button class="mode active" data-mode="focus">
+                    Foco
+                </button>
+
+                <button class="mode" data-mode="short">
+                    Pausa curta
+                </button>
+
+                <button class="mode" data-mode="long">
+                    Pausa longa
+                </button>
+            </div>
+
+
+            <div class="timer-wrapper">
+
+                <div class="progress-ring">
+
+                    <svg viewBox="0 0 280 280">
+
+                        <circle
+                            class="ring-bg"
+                            cx="140"
+                            cy="140"
+                            r="124"
+                        />
+
+                        <circle
+                            class="ring-progress"
+                            id="progress"
+                            cx="140"
+                            cy="140"
+                            r="124"
+                        />
+
+                    </svg>
+
+                    <div class="timer-content">
+
+                        <span class="timer-label" id="timerLabel">
+                            TEMPO DE FOCO
+                        </span>
+
+                        <div class="timer" id="timer">
+                            25:00
+                        </div>
+
+                        <span class="session-info" id="sessionInfo">
+                            Sessão 1
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="controls">
+
+                <button class="secondary-btn" id="resetBtn">
+                    ↻
+                </button>
+
+                <button class="start-btn" id="startBtn">
+                    <span id="startIcon">▶</span>
+                    <span id="startText">Iniciar</span>
+                </button>
+
+                <button class="secondary-btn" id="skipBtn">
+                    ⏭
+                </button>
+
+            </div>
+
+
+            <div class="status">
+                <span class="status-dot"></span>
+                <span id="statusText">Pronto para começar</span>
+            </div>
+
+        </section>
+
+
+        <section class="stats">
+
+            <div class="stat">
+                <span class="stat-value" id="cycleCount">0</span>
+                <span class="stat-label">Ciclos</span>
+            </div>
+
+            <div class="stat">
+                <span class="stat-value" id="focusCount">0</span>
+                <span class="stat-label">Focos</span>
+            </div>
+
+            <div class="stat">
+                <span class="stat-value" id="totalMinutes">0</span>
+                <span class="stat-label">Minutos</span>
+            </div>
+
+        </section>
+
+
+        <footer>
+            <span>Pomodoro</span>
+            <span>•</span>
+            <span>Foco. Pausa. Repita.</span>
+        </footer>
+
+    </main>
+
+
+    <div class="notification" id="notification">
+        <div class="notification-icon">✓</div>
+
+        <div>
+            <strong id="notificationTitle">
+                Sessão concluída
+            </strong>
+
+            <span id="notificationText">
+                Hora de fazer uma pausa.
+            </span>
+        </div>
+    </div>
+
+
+    <script type="module" src="./dist/main.js"></script>
+
+</body>
+</html>
